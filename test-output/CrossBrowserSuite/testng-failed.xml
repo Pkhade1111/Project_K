@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="3" parallel="tests" name="Failed suite [CrossBrowserSuite]" guice-stage="DEVELOPMENT">
+  <test thread-count="3" parallel="tests" name="EdgeTest(failed)">
+    <parameter name="browser" value="edge"/>
+    <groups>
+      <run>
+        <include name="errorHandling"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="Project_K.test.ErrorValidations">
+        <methods>
+          <include name="LoginErrorValidation"/>
+          <include name="close"/>
+          <include name="LaunchApplication"/>
+        </methods>
+      </class> <!-- Project_K.test.ErrorValidations -->
+    </classes>
+  </test> <!-- EdgeTest(failed) -->
+  <test thread-count="3" parallel="tests" name="FirefoxTest(failed)">
+    <parameter name="browser" value="firefox"/>
+    <groups>
+      <run>
+        <include name="errorHandling"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="Project_K.test.ErrorValidations">
+        <methods>
+          <include name="LoginErrorValidation"/>
+          <include name="close"/>
+          <include name="LaunchApplication"/>
+        </methods>
+      </class> <!-- Project_K.test.ErrorValidations -->
+    </classes>
+  </test> <!-- FirefoxTest(failed) -->
+  <test thread-count="3" parallel="tests" name="ChromeTest(failed)">
+    <parameter name="browser" value="chrome"/>
+    <groups>
+      <run>
+        <include name="errorHandling"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="Project_K.test.ErrorValidations">
+        <methods>
+          <include name="LoginErrorValidation"/>
+          <include name="close"/>
+          <include name="LaunchApplication"/>
+        </methods>
+      </class> <!-- Project_K.test.ErrorValidations -->
+    </classes>
+  </test> <!-- ChromeTest(failed) -->
+</suite> <!-- Failed suite [CrossBrowserSuite] -->
