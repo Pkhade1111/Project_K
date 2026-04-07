@@ -6,6 +6,9 @@
 <include name="testorderhistroy"></include>
 </run>
 </groups>
+<listeners>
+<listener class-name="Projet_K.testcomponents.Listeners"></listener>
+</listeners>
   <test thread-count="5" name="Submit Order Test">
       <parameter name="BrowerName" value="chrome"/>
     <classes>
