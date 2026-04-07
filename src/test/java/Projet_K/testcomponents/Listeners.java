@@ -59,6 +59,25 @@ public class Listeners extends BaseTest implements ITestListener {
 	@Override
 	public void onTestSkipped(ITestResult result) {
 		extendTest.get().skip("thest has been skip ");
+		try {
+			driver = (WebDriver) result.getTestClass().getRealClass().getField("driver")
+					.get(result.getInstance());
+			}catch (Exception e1)
+			{
+				e1.printStackTrace();
+			}
+
+			String filepath = null;
+			try {
+				filepath = getScreenShot(result.getMethod().getMethodName(), driver);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			extendTest.get().addScreenCaptureFromPath(filepath, result.getMethod().getMethodName());
+			
+		}
+
 	
 	}
 
