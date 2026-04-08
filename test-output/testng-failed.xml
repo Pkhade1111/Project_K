@@ -4,21 +4,20 @@
   <listeners>
     <listener class-name="Projet_K.testcomponents.Listeners"/>
   </listeners>
-  <test thread-count="5" name="Error Validations Test(failed)">
-    <parameter name="BrowerName" value="chrome"/>
+  <test thread-count="5" name="Submit Order Test(failed)">
     <groups>
       <run>
-        <include name="errorHandling"/>
+        <include name="testorderhistroy"/>
       </run>
     </groups>
     <classes>
-      <class name="Project_K.test.ErrorValidations">
+      <class name="Project_K.test.SubmitOrderTest">
         <methods>
-          <include name="LoginErrorValidation"/>
+          <include name="SubmitOrder" invocation-numbers="0"/>
           <include name="close"/>
           <include name="LaunchApplication"/>
         </methods>
-      </class> <!-- Project_K.test.ErrorValidations -->
+      </class> <!-- Project_K.test.SubmitOrderTest -->
     </classes>
-  </test> <!-- Error Validations Test(failed) -->
+  </test> <!-- Submit Order Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

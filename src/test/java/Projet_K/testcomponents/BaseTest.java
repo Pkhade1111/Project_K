@@ -31,14 +31,16 @@ public class BaseTest {
 	
 public WebDriver driver;
 public Landingpage landingPage;
-@Parameters("BrowerName")
-	public WebDriver initializeDriver(String BrowerName) throws IOException
+	public WebDriver initializeDriver() throws IOException
 	{
 		 
-//		Properties pro = new Properties();
-//        FileInputStream fis = new FileInputStream(System.getProperty("user.dir")+"\\src\\main\\java\\Project_K\\resources\\GlobleData.properties");
-//		pro.load(fis);
-//		String BrowerName = pro.getProperty("brower");
+		Properties pro = new Properties();
+        FileInputStream fis = new FileInputStream(System.getProperty("user.dir")+"\\src\\main\\java\\Project_K\\resources\\GlobleData.properties");
+		pro.load(fis);
+		String BrowerName = System.getProperty("browser") != null 
+                ? System.getProperty("browser") 
+                : pro.getProperty("browser");
+//		pro.getProperty("brower");
 		
 		if(BrowerName.equalsIgnoreCase("chrome"))	
 		{
@@ -86,10 +88,10 @@ public Landingpage landingPage;
 	}
 	
 	@BeforeMethod(alwaysRun = true)
-	@Parameters("BrowerName")
-	public Landingpage LaunchApplication( String BrowerName) throws IOException, InterruptedException
+	
+	public Landingpage LaunchApplication() throws IOException, InterruptedException
 	{
-		driver = initializeDriver(BrowerName);
+		driver = initializeDriver();
 		landingPage =new Landingpage(driver);
 		landingPage.url();
 		Thread.sleep(2000);

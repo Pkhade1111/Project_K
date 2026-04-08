@@ -10,13 +10,13 @@
 <listener class-name="Projet_K.testcomponents.Listeners"></listener>
 </listeners>
   <test thread-count="5" name="Submit Order Test">
-  <parameter name="BrowerName" value="chrome"></parameter>
+  <!--<parameter name="BrowerName" value="chrome"></parameter> -->
     <classes>
       <class name="Project_K.test.SubmitOrderTest"/>
     </classes>
   </test> <!-- Test -->
    <test thread-count="5" name="Error Validations Test">
-    <parameter name="BrowerName" value="chrome"></parameter>
+   <!--<parameter name="BrowerName" value="chrome"></parameter> -->
     <classes>
       <class name="Project_K.test.ErrorValidations"/>
     </classes>
